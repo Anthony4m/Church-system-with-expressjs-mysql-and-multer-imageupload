@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/sy.css"  type="text/css" rel="stylesheet" >
+    <link href="/css/w3style.css"  type="text/css" rel="stylesheet" >
+    <link href="/css/style.css"  type="text/css" rel="stylesheet" >
+    <link href="/css/bootstrap.min.css"  type="text/css" rel="stylesheet" >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Register</title>
+</head>
+<body class="loginBody">
+    <div class="container">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h2>Login</h2>
+
+            <%if(message.length > 0){ %>
+<div class="alert alert-danger"><%= message %></div>
+           <% } %>
+        </div>
+        <div class="signupSection">
+            <div class="info">
+              <h2>ELIM CHRISTIAN MINISTRIES</h2>
+              <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+              <p>The Future Is Here</p>
+            </div>
+            <form action="/login" method="POST" class="signupForm" name="signupform">
+              <h2>LOG IN</h2>
+              <ul class="noBullet">
+                <li>
+                  <label for="username"></label>
+                  <input type="text" class="inputFields" id="username" name="username" placeholder="username"  required/>
+                </li>
+                <li>
+                  <label for="password"></label>
+                  <input type="password" class="inputFields" id="password" name="password" placeholder="password" required/>
+                </li>
+                <li id="center-btn">
+                  <button type="submit" id="join-btn">Login</button>
+                </li>
+              </ul>
+            </form>
+            <hr>
+            <p><a href="/signup">Register</a></p>
+            <p>Go back <a href="/">Home</a></p>
+          </div>
+    </div>
+</body>
+</html>

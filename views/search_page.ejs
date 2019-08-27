@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/sy.css"  type="text/css" rel="stylesheet" >
+    <link href="/css/w3style.css"  type="text/css" rel="stylesheet" >
+    <link href="/css/style.css"  type="text/css" rel="stylesheet" >
+    <link href="/css/datatables.css"  type="text/css" rel="stylesheet" >
+    <link href="/css/bootstrap.min.css"  type="text/css" rel="stylesheet" >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ELIM CHRISTIAN CENTRE</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark justify-content-between">
+            <a class="navbar-brand" href="profile"><strong>ELIMCC SYSTEM</strong></a>
+        <form action="/delete" id="delete-member" method="post" class="form-inline" >
+        <input type="text" name="firstname" placeholder="FirstName" class="form-control mr-sm-2" required>
+        <input type="text" name="lastname" placeholder="LastName" class="form-control mr-sm-2" required>
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Delete Member</button>
+        </form>
+    </nav>
+    <div class=" card auto-height table-responsive">
+    <table id="allmem" class="table display table-striped table-hover" role="grid" style="width:100%">
+        <thead class="thead-dark">
+            <tr role="row">
+                    <th scope="col">num</th>
+                    <th scope="col">image</th>
+                    <th scope="col">Firstname</th>
+                    <th scope="col">LastName</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Date of birth</th>
+    
+            </tr>
+        </thead>
+        <tbody class="table-striped">
+            <% let i = 1 %>
+                  <% data.forEach(function(member){ %> 
+        <tr role="row" class="odd">
+                <td class="text-center"><strong><%= i++ %></strong></td>
+                <td><img src="/images/upload_images/<%=member.image%>" alt="member"  class="img-fluid img-thumbnail member-img"></td>
+                <td><%= member.FirstName %></td>
+                <td><%= member.LastName %></td>
+                <td>0<%= member.Phone %></td>
+                <td><%= member.DOB %></td>
+            </tr>
+            <% }) %>
+           </tbody>
+    </table>
+    <script src="/js_scripts/delete_member.js"></script>
+    <script src="/js_scripts/jquery.js"></script>
+    <script src="/js_scripts/datatables_jq.js"></script>
+    <script src="/js_scripts/datatables.js"></script>
+    <script src="/js_scripts/datamin.js"></script>
+    <script>$(document).ready( function () {
+        $('#allmem').DataTable({
+            scrollY: 460,
+            select: true,
+            responsive: true
+        });
+    } );
+    </script>
+</body>
+</html>
+

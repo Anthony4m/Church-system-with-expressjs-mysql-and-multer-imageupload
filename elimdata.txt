@@ -1,0 +1,10 @@
+create database Elim_Christian_Centre;
+Use Elim_Christian_Centre;
+Create Table Member (
+id int not null primary key  auto_increment,
+image Varchar(255) not null,
+FirstName Varchar(255) not null,
+LastName VarChar(255) not null,
+Phone int not null unique,
+DOB VARCHAR(12) not null
+);
